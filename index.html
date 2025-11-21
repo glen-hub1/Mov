@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glen Movies — Public Domain</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Glen Movies <span class="tag">Public Domain</span></div>
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Search public domain movies..." />
+      <button id="searchBtn">Search</button>
+      <button id="darkToggle" aria-pressed="false">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="features">
+      <div>
+        <h1>Watch & Download Legal Public-Domain Movies</h1>
+        <p>Browse curated public domain films powered by Internet Archive. Click a poster to play. Downloads are legal.</p>
+      </div>
+      <div class="filters">
+        <button class="filter active" data-q="">Trending</button>
+        <button class="filter" data-q="subject:(classic)">Classics</button>
+        <button class="filter" data-q="subject:(horror)">Horror</button>
+        <button class="filter" data-q="subject:(sci-fi)">Sci-Fi</button>
+        <button class="filter" data-q="subject:(comedy)">Comedy</button>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <!-- Movie cards inserted here -->
+    </section>
+
+    <div id="loadMoreWrap" class="load-more-wrap">
+      <button id="loadMore">Load more</button>
+    </div>
+
+    <footer class="footer">
+      <small>Sources: Internet Archive (archive.org). All movies shown are public domain/free to download where indicated.</small>
+    </footer>
+  </main>
+
+  <!-- Video modal -->
+  <div id="playerModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closePlayer" class="close">✕</button>
+      <h2 id="playerTitle"></h2>
+      <video id="playerVideo" controls playsinline controlsList="nodownload"></video>
+      <div class="player-actions">
+        <a id="downloadBtn" class="download" target="_blank" rel="noopener">Download file</a>
+        <a id="sourceBtn" class="source" target="_blank" rel="noopener">Open on Archive</a>
+      </div>
+      <p id="playerDesc"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
