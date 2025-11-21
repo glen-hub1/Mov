@@ -1,0 +1,265 @@
+/* ===========================
+   GLEN MOVIES — MOVIEBOX STYLE
+   =========================== */
+
+/* Colors & Theme */
+:root {
+  --bg-main: #0a0f1d;
+  --bg-card: #131a2a;
+  --bg-hover: #1a2338;
+  --text-light: #ffffff;
+  --text-muted: #9ca3af;
+  --accent: #e50914; /* MovieBox red */
+  --radius: 14px;
+  --transition: 0.25s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-light);
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===========================
+   HEADER (MovieBox style)
+   =========================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f1527;
+  padding: 14px 20px;
+  border-radius: var(--radius);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+
+.brand .tag {
+  color: var(--accent);
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+/* Search bar */
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls input {
+  background: #182033;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 14px;
+  color: var(--text-light);
+  border-radius: var(--radius);
+  width: 230px;
+}
+
+.controls button {
+  background: var(--accent);
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.controls button:hover {
+  opacity: 0.8;
+}
+
+/* ===========================
+   HERO + FILTERS
+   =========================== */
+.features {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.features h1 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.filter {
+  background: #121a2c;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: var(--transition);
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--accent);
+}
+
+/* ===========================
+   MOVIE GRID (MovieBox style)
+   =========================== */
+.gallery {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.card:hover {
+  transform: scale(1.04);
+  background: var(--bg-hover);
+}
+
+.poster {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: black;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   LOAD MORE BUTTON
+   =========================== */
+#loadMore {
+  padding: 12px 20px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#loadMore:hover {
+  opacity: 0.8;
+}
+
+/* ===========================
+   PLAYER MODAL (MovieBox style)
+   =========================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal-content {
+  background: #10182b;
+  padding: 20px;
+  border-radius: var(--radius);
+  max-width: 900px;
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.close {
+  float: right;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#playerVideo {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: 15px;
+}
+
+.player-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.download,
+.source {
+  text-decoration: none;
+  background: var(--accent);
+  padding: 10px 16px;
+  color: white;
+  border-radius: var(--radius);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.download:hover,
+.source:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+  margin-top: 25px;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  .poster {
+    height: 200px;
+  }
+}
