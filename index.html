@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GlenMovies — MovieBox PRO (Legal)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar">
+    <div class="brand">
+      <div class="logo">GlenMovies</div>
+      <div class="sub">Public Domain</div>
+    </div>
+    <nav class="side-nav">
+      <button class="nav-btn active" data-section="trending">Trending</button>
+      <button class="nav-btn" data-section="action">Action</button>
+      <button class="nav-btn" data-section="drama">Drama</button>
+      <button class="nav-btn" data-section="horror">Horror</button>
+      <button class="nav-btn" data-section="comedy">Comedy</button>
+      <button class="nav-btn" data-section="all">All Movies</button>
+    </nav>
+
+    <div class="side-controls">
+      <button id="openLogin" class="accent">Sign in</button>
+      <button id="toggleSidebar" class="ghost">Collapse</button>
+    </div>
+
+    <small class="side-foot">Sources: Internet Archive • Public Domain</small>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <!-- NAVBAR -->
+    <header class="topbar">
+      <div class="top-left">
+        <button id="hamburger" class="icon">☰</button>
+        <div class="search">
+          <input id="searchInput" placeholder="Search movies, creators..." />
+          <button id="searchBtn">Search</button>
+        </div>
+      </div>
+      <div class="top-right">
+        <button id="myListBtn" class="ghost">My List</button>
+        <button id="darkToggle" class="ghost">🌙</button>
+      </div>
+    </header>
+
+    <!-- SLIDER / HERO (featured) -->
+    <section id="hero" class="hero">
+      <div id="heroSlides" class="hero-slides"></div>
+      <div class="hero-controls">
+        <button id="prevHero" class="ghost">‹</button>
+        <button id="nextHero" class="ghost">›</button>
+      </div>
+    </section>
+
+    <!-- CONTENT AREA -->
+    <main class="content">
+      <!-- rows are populated dynamically -->
+      <section class="row" id="row-trending">
+        <h3>Trending</h3>
+        <div class="row-scroll" id="trendingRow"></div>
+      </section>
+
+      <section class="row" id="row-action">
+        <h3>Action</h3>
+        <div class="row-scroll" id="actionRow"></div>
+      </section>
+
+      <section class="row" id="row-drama">
+        <h3>Drama</h3>
+        <div class="row-scroll" id="dramaRow"></div>
+      </section>
+
+      <section class="row" id="row-horror">
+        <h3>Horror</h3>
+        <div class="row-scroll" id="horrorRow"></div>
+      </section>
+
+      <section class="row" id="row-comedy">
+        <h3>Comedy</h3>
+        <div class="row-scroll" id="comedyRow"></div>
+      </section>
+
+      <section class="row" id="row-all">
+        <h3>All Movies</h3>
+        <div class="grid" id="allGrid"></div>
+        <div class="center"><button id="loadMore" class="accent">Load more</button></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>GlenMovies — Legal public-domain streaming demo • No piracy.</small>
+    </footer>
+  </div>
+
+  <!-- PLAYER MODAL -->
+  <div id="playerModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="closePlayer" class="close">✕</button>
+      <div class="player-head">
+        <div>
+          <h2 id="playerTitle">Title</h2>
+          <div id="playerMeta" class="meta"></div>
+        </div>
+        <div class="player-actions">
+          <a id="downloadBtn" class="accent" target="_blank" rel="noopener">Download</a>
+          <button id="addToList" class="ghost">+ My List</button>
+          <button id="openTrailer" class="ghost">Trailer</button>
+        </div>
+      </div>
+
+      <video id="playerVideo" controls playsinline controlsList="nodownload" preload="metadata"></video>
+      <p id="playerDesc" class="desc"></p>
+
+      <div id="recommendWrap">
+        <h4>Recommended for you</h4>
+        <div id="recommendRow" class="row-scroll"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRAILER POPUP -->
+  <div id="trailerModal" class="modal" aria-hidden="true">
+    <div class="modal-panel small">
+      <button id="closeTrailer" class="close">✕</button>
+      <div id="trailerFrame" class="trailerFrame"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL (mock, localStorage) -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-panel small">
+      <button id="closeLogin" class="close">✕</button>
+      <h3 id="loginTitle">Sign in to GlenMovies</h3>
+      <input id="emailInput" type="email" placeholder="Email" />
+      <input id="nameInput" type="text" placeholder="Display name (for new users)" />
+      <div class="row">
+        <button id="signUpBtn" class="accent">Sign Up</button>
+        <button id="signInBtn" class="ghost">Sign In</button>
+      </div>
+      <p class="muted">This demo uses client-side storage only (localStorage). Not secure for production.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
