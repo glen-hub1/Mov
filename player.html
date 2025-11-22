@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLEN MOVIES | Watch Movie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div class="glen-wrapper">
+
+        <nav class="sidebar">
+            <div class="logo"><span class="nav-icon">🎬</span> GLEN MOVIES</div>
+            <ul>
+                <li><a href="index.html"><span class="nav-icon">🏠</span> Home</a></li>
+                <li class="active"><a href="#"><span class="nav-icon">▶️</span> Current Stream</a></li>
+                <li><a href="#"><span class="nav-icon">🍿</span> Categories</a></li>
+                <li class="ai-link"><a href="#"><span class="nav-icon">🤖</span> Glen AI Recommendations</a></li>
+                <li class="separator"></li>
+                <li><a href="login.html"><span class="nav-icon">👤</span> Login / Profile</a></li>
+                <li><a href="#"><span class="nav-icon">⚙️</span> Settings</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <input type="search" placeholder="Search movies, series, and genres..." class="search-input">
+                <button class="profile-btn"><span class="nav-icon">🔔</span></button>
+            </header>
+
+            <section class="video-player-area">
+                
+                <div class="video-container">
+                    <video id="movie-stream" controls poster="[URL_TO_POSTER_IMAGE]">
+                        <source src="[API_MOVIE_STREAM_URL].mp4" type="video/mp4">
+                        <p>Your browser doesn't support HTML5 video.</p>
+                    </video>
+                </div>
+
+                <div class="movie-details">
+                    <h1>Dune: Part Two</h1>
+                    <p class="meta-info">
+                        <span>⭐ 8.8/10</span>
+                        <span>🗓️ 2024</span>
+                        <span>⏱️ 2h 46m</span>
+                        <span>Category: Sci-Fi, Adventure</span>
+                    </p>
+
+                    <div class="actions">
+                        <a href="[API_MOVIE_DIRECT_DOWNLOAD_URL]" download="Dune-Part-Two.mp4" class="download-btn">
+                            ⬇️ Download Full Movie
+                        </a>
+
+                        <button class="btn-trailer" onclick="showTrailerPopup()">
+                            🎬 Watch Trailer
+                        </button>
+                    </div>
+
+                    <p style="margin-top: 20px; color: var(--text-light);">
+                        Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.
+                    </p>
+                </div>
+                
+                <hr class="separator" style="margin: 40px 0;">
+
+                <section class="movie-grid-section">
+                    <h2>🤖 Glen AI Recommendations (Based on Dune)</h2>
+                    <div class="movie-grid">
+                        <div class="movie-card">
+                            <div class="poster-image"><span>AI Rec 1</span></div>
+                            <h3 class="card-title">Blade Runner 2049</h3>
+                            <p class="card-meta">Sci-Fi • 2017</p>
+                        </div>
+                        <div class="movie-card">
+                            <div class="poster-image"><span>AI Rec 2</span></div>
+                            <h3 class="card-title">Star Wars: A New Hope</h3>
+                            <p class="card-meta">Adventure • 1977</p>
+                        </div>
+                        </div>
+                </section>
+
+            </section>
+        </main>
+    </div>
+
+    <div id="trailer-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="hideTrailerPopup()">&times;</span>
+            <h3>Official Trailer</h3>
+            <div id="trailer-iframe-wrapper" class="modal-iframe-wrapper">
+                <iframe width="100%" height="100%" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
