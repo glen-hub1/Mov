@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLEN MOVIES | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div class="glen-wrapper">
+
+        <nav class="sidebar">
+            <div class="logo"><span class="nav-icon">🎬</span> GLEN MOVIES</div>
+            <ul>
+                <li class="active"><a href="index.html"><span class="nav-icon">🏠</span> Home</a></li>
+                <li><a href="#"><span class="nav-icon">🍿</span> Categories</a></li>
+                <li><a href="#"><span class="nav-icon">🆕</span> New Releases</a></li>
+                <li class="ai-link"><a href="#"><span class="nav-icon">🤖</span> Glen AI Recommendations</a></li>
+                <li class="separator"></li>
+                <li><a href="login.html"><span class="nav-icon">👤</span> Login / Profile</a></li>
+                <li><a href="#"><span class="nav-icon">⚙️</span> Settings</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <input type="search" placeholder="Search movies, series, and genres..." class="search-input">
+                <button class="profile-btn"><span class="nav-icon">🔔</span></button>
+            </header>
+
+            <section class="featured-banner">
+                <h1 class="movie-title-large">Black Panther: Wakanda Forever</h1>
+                <p class="movie-tagline">Experience the epic sequel. Available to stream in 4K now.</p>
+                <div class="banner-actions">
+                    <a href="player.html" class="btn-play">▶️ Play Now</a>
+                    <button class="btn-trailer" onclick="showTrailerPopup()">🎬 Watch Trailer</button>
+                </div>
+            </section>
+
+            <section class="movie-grid-section">
+                <h2>🔥 Trending Now</h2>
+                <div class="movie-grid">
+                    <div class="movie-card" onclick="window.location.href='player.html'">
+                        <div class="poster-image"><span>Sci-Fi/Action</span></div>
+                        <h3 class="card-title">Dune: Part Two</h3>
+                        <p class="card-meta">Action • 2024</p>
+                    </div>
+
+                    <div class="movie-card" onclick="window.location.href='player.html'">
+                        <div class="poster-image"><span>Horror</span></div>
+                        <h3 class="card-title">Talk to Me</h3>
+                        <p class="card-meta">Horror • 2023</p>
+                    </div>
+
+                    <div class="movie-card" onclick="window.location.href='player.html'">
+                        <div class="poster-image"><span>Thriller</span></div>
+                        <h3 class="card-title">Oppenheimer</h3>
+                        <p class="card-meta">Biography • 2023</p>
+                    </div>
+                    
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="trailer-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="hideTrailerPopup()">&times;</span>
+            <h3>Official Trailer</h3>
+            <div id="trailer-iframe-wrapper" class="modal-iframe-wrapper">
+                <iframe width="100%" height="100%" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
