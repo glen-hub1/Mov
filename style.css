@@ -1,0 +1,62 @@
+/* Basic theme + layout */
+:root{
+  --bg: #0d0d0f;
+  --card: #121216;
+  --muted: #99a0a6;
+  --accent: #00eaff;
+  --text: #fff;
+}
+
+.light{ --bg:#f6f7fb; --card:#fff; --text:#111; --muted:#6b7280; }
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, Arial, sans-serif;background:var(--bg);color:var(--text);transition:all .25s}
+.app{display:flex;min-height:100vh}
+
+/* SIDEBAR */
+.sidebar{width:260px;padding:18px;background:rgba(255,255,255,0.03);border-right:1px solid #0006}
+.brand{font-weight:800;font-size:20px;color:var(--accent);margin-bottom:12px}
+.sidebar-section{margin-bottom:18px}
+.category-list button, .continue-list .item, .downloads-list .item{display:block;margin:6px 0;padding:8px;border-radius:8px;background:var(--card);border:none;color:var(--text);text-align:left}
+
+.premium-box{background: linear-gradient(90deg,#111,#0a0a0a);padding:12px;border-radius:10px}
+.premium-box button{margin-top:8px;padding:8px;border-radius:8px;border:none;background:var(--accent);color:#000}
+
+/* MAIN */
+.main{flex:1;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #0005}
+.search-area input{width:420px;max-width:60vw;padding:10px;border-radius:10px;border:none}
+.controls{display:flex;gap:12px;align-items:center}
+.glen-loader{color:var(--accent)}
+.sections{padding:16px}
+.section{margin-bottom:18px}
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.movie-card{background:var(--card);border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:0 6px 18px #0006;transition:transform .18s}
+.movie-card:hover{transform:translateY(-6px)}
+.movie-card img{width:100%;height:220px;object-fit:cover}
+.movie-title{padding:10px;font-weight:600;text-align:center}
+
+/* POPUP */
+.popup{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;justify-content:center;align-items:center}
+.popup-content{width:92%;max-width:1000px;background:var(--card);padding:18px;border-radius:12px}
+.popup-body{display:flex;gap:14px}
+.popup img{width:220px;height:320px;object-fit:cover;border-radius:8px}
+.meta{margin-top:8px;font-size:13px;color:var(--muted)}
+.right{flex:1}
+.trailer-wrap video{width:100%;height:220px;background:#000;border-radius:8px}
+#downloadList a{display:block;margin:8px 0;padding:8px;border-radius:8px;background:var(--accent);color:#000;text-decoration:none;font-weight:700}
+.popup-actions{display:flex;gap:8px;margin-top:12px}
+.close-btn{position:absolute;right:24px;top:18px;background:#0003;border:none;color:var(--text);font-size:20px;padding:6px 10px;border-radius:8px}
+
+/* CHAT */
+.chatbot-btn{position:fixed;right:20px;bottom:20px;background:var(--accent);padding:12px;border-radius:50%;cursor:pointer}
+.chat-window{position:fixed;right:20px;bottom:80px;width:320px;background:var(--card);border-radius:12px;display:flex;flex-direction:column}
+.hidden{display:none}
+.chat-header{padding:10px;background:var(--accent);color:#000;font-weight:700}
+.chat-messages{height:300px;overflow:auto;padding:10px}
+.chat-input{display:flex;padding:10px;gap:8px}
+.chat-input input{flex:1;padding:8px;border-radius:8px;border:none}
+.chat-input button{padding:8px;border-radius:8px;border:none;background:var(--accent)}
+
+/* responsive */
+@media(max-width:900px){.sidebar{display:none}.search-area input{max-width:40vw}.movie-card img{height:180px}}
