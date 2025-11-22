@@ -1,0 +1,26 @@
+.glen-wrapper {
+    display: flex; /* Use Flexbox for layout */
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    background: #141414; /* Dark background */
+    color: white;
+    padding: 20px;
+}
+
+.main-content {
+    flex-grow: 1; /* Takes up the rest of the space */
+    padding: 30px;
+    background: #1c1c1c;
+    color: white;
+}
+
+.movie-player-container video {
+    width: 100%;
+    max-width: 900px; /* Optional: Limit player size */
+    height: auto;
+}
+
+/* Add CSS for your .modal, .download-btn, etc. */
