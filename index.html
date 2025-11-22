@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLEN MOVIES | Stream & Download</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div class="glen-wrapper">
+
+        <nav class="sidebar">
+            <div class="logo">GLEN MOVIES</div>
+            <ul>
+                <li><a href="#"><span class="icon">🏠</span> Home</a></li>
+                <li><a href="#"><span class="icon">🍿</span> Categories (MovieBox)</a></li>
+                <li><a href="#"><span class="icon">🤖</span> Glen AI Recommendations</a></li>
+                <li><a href="#"><span class="icon">👤</span> My Profile (Login)</a></li>
+                <li class="separator">---</li>
+                <li><a href="#"><span class="icon">⚙️</span> Settings</a></li>
+                <li><a href="#"><span class="icon">➕</span> Add More Movies (Admin)</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            
+            <header>
+                <h1>Current Feature: Movie Player Page</h1>
+            </header>
+
+            <section class="movie-player-container">
+                <h2>Title of the Movie</h2>
+
+                <video id="movie-stream" controls poster="[URL_TO_POSTER_IMAGE]" preload="metadata">
+                    <source src="[API_MOVIE_STREAM_URL].mp4" type="video/mp4">
+                    <source src="[API_MOVIE_STREAM_URL].webm" type="video/webm">
+                    <p>Your browser doesn't support HTML5 video. <a href="[API_MOVIE_STREAM_URL].mp4">Download the movie</a> instead.</p>
+                </video>
+                
+                <div class="actions">
+                    <a href="[API_MOVIE_DIRECT_DOWNLOAD_URL]" download="Movie-Title.mp4" class="download-btn">
+                        <span class="icon">⬇️</span> Download Movie
+                    </a>
+
+                    <button id="show-trailer-btn" onclick="showTrailerPopup()">
+                        <span class="icon">🎬</span> Watch Trailer
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="trailer-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="hideTrailerPopup()">&times;</span>
+            <h3>Official Trailer</h3>
+            <iframe width="100%" height="315" src="[URL_TO_EMBEDDED_TRAILER]" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
